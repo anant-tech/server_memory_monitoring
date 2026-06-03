@@ -15,11 +15,11 @@
 
 threshold=90
 
-Mem Used=$(free -m | awk 'NR==2{printf "%d", $3*100/$2}')
+Mem_Used=$(free -m | awk 'NR==2{printf "%d", $3*100/$2}')
 
-if [ "$Mem Used" -ge "$threshold" ]; then
+if [ "$Mem_Used" -ge "$threshold" ]; then
 
-echo "The Memory on $(hostname) has used more than ${threshold)% at $(date)" | \
+echo "The Memory on $(hostname) has used more than ${threshold}% at $(date)" | \
 
 mail -s "Server Memory Alert" abcd@ymail.com
 
